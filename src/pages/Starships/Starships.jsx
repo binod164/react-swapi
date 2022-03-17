@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 
 const Starships = (props) => {
 
-  // Change this to an empty array, as we'll set state via API now!
   const [starships, setStarships] = useState([])
   
   useEffect(()=> {
