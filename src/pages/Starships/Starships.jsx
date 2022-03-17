@@ -15,17 +15,25 @@ const Starships = (props) => {
   return (
     <>
       <h1>STAR WARS STARSHIPS</h1>
-      <div>
-      <div className='icon-container'>
-          {starships.map((starship) => (
-            <Link class="details" to='/starship' state={{starship}} key={starship.index}>
-              <div id="classDiv" >
-                {starship.name}
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div>
+      {starships.length ?
+        <>
+          <div>
+          <div className='icon-container'>
+              {starships.map((starship) => (
+                <Link class="details" to='/starship' state={{starship}} key={starship.index}>
+                  <div id="classDiv" >
+                    {starship.name}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </>
+        :
+        <>
+          <h2>Loading starships...</h2>
+        </>
+      }      
     </>  
   );
 } 
